@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Case 1: 13세 미만 & 쿠폰 O (이벤트 당첨 및 무료)",
+      "setup": "",
+      "run": "python3 main.py",
+      "input": "10\r\nY",
+      "output": "꼬마\\s*VIP\\s*고객님!\\s*팝콘\\s*무료\\s*증정![\\s\\S]*티켓\\s*요금\\s*:\\s*무료입니다\\.",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 34
+    },
+    {
+      "name": "Case 2: 13세 이상~65세 미만 & 쿠폰 X (일반 요금)",
+      "setup": "",
+      "run": "python3 main.py",
+      "input": "28\r\nN",
+      "output": "티켓\\s*요금\\s*:\\s*15,000원입니다\\.",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 33
+    },
+    {
+      "name": "Case 3: 65세 이상 & 쿠폰 X (경로우대 무료)",
+      "setup": "",
+      "run": "python3 main.py",
+      "input": "70\r\nN",
+      "output": "티켓\\s*요금\\s*:\\s*무료입니다\\.",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 33
+    }
+  ]
+}
